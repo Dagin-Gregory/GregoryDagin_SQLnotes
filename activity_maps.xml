@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <!-- This linear layout is for the View button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:weightSum="1">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:id="@+id/button_view"
+            android:layout_gravity="right"
+            android:onClick="changeView"
+            android:layout_weight="0.51"/>
+
+        <Button
+            android:id="@+id/button_TrkMe"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="0.45"
+            android:onClick="trackMyLocation"
+            android:text="Trk" />
+
+        <Button
+            android:id="@+id/button_Clear"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="clear"
+            android:text="Clr" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/testDegrees"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.97" />
+
+        <EditText
+            android:id="@+id/editText_addr"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.97" />
+
+        <Button
+            android:id="@+id/button_search"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="onSearch"
+            android:text="Srch1" />
+
+    </LinearLayout>
+
+    <!-- This is for the map -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="388dp"
+        android:layout_height="469dp"
+        tools:context=".MapsActivity" />
+</LinearLayout>
